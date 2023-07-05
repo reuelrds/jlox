@@ -7,6 +7,21 @@ import java.nio.file.Paths;
 
 public class Lox {
 
+    static boolean hadError = false;
+
+    private static void report(int line, String where, String message) {
+        System.err.println("[line " + line + "] Error" + where + ": " + message);
+        hadError = true;
+    }
+
+    static void error(int line, String message) {
+
+        // The book has a very basic error reporting mechanism.
+        // TODO: Find a better way to implement error reporting.
+
+        report(line, "", message);
+    }
+
     private static void run(String source) throws IOException {}
 
     private static void runFile(String filePath) throws IOException {
@@ -20,6 +35,8 @@ public class Lox {
         // start character by character.
         byte[] bytes = Files.readAllBytes(Paths.get(filePath));
         run(new String(bytes, Charset.defaultCharset()));
+        
+        if (hadError) System.exit(65);
     }
 
     private static void runPrompt() throws IOException {
@@ -36,6 +53,8 @@ public class Lox {
             if (line == null)
                 break;
             run(line);
+
+            hadError = false;
         }
     }
 
