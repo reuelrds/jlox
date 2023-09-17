@@ -46,6 +46,12 @@ class Scanner {
             case '+': addToken(TokenType.PLUS); break;
             case ';': addToken(TokenType.SEMICOLON); break;
             case '*': addToken(TokenType.STAR); break; 
+            default:
+                // TODO: Can we somehow imporve the error tracking
+                // where we point out exactly where the un-supported
+                // chracter was encountered in the source?
+                Lox.error(line, "Unexpected character.");
+                break;
         }
     }
 
