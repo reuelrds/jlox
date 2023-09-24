@@ -2,7 +2,7 @@
 
 This is my implementation of the Lox interpreter from the book [Crafting Interpreters](https://craftinginterpreters.com/). This project is an ongoing development of the interpreter, implemented in Java, as part of a self-learning exercise to understand the deeper concepts of interpreters and programming languages.
 
-The development process is structured by chapters, with each chapter residing in its own branch. Every individual section within a chapter has its own commit, making it easy to follow the progress and understand the changes.
+***Note: The development process is structured by chapters, with each chapter residing in its own branch. Every individual section within a chapter has its own commit, making it easy to follow the progress and understand the changes.***
 
 ## Additional Features
 
